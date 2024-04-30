@@ -1,0 +1,74 @@
+POST http://localhost:3000/register
+Content-Type: application/json
+
+{
+    "name":"Mohammad Yusuf Baba",
+    "username":"yusufmhmd",
+    "password":"yusufmhmd",
+    "isAdmin":true
+}
+
+###
+POST http://localhost:3000/login
+Content-Type: application/json
+
+{
+    "username":"yusufmhmd",
+    "password":"yusufmhmd",
+    "isAdmin":true
+}
+
+###
+GET http://localhost:3000/users
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Inl1c3VmbWhtZCIsImlzQWRtaW4iOjEsImlhdCI6MTcxNDQ4OTYyNX0.mw7lOaRFbJYGpwaKvUfwFx6eRHmdAimmtptjngUyugk
+
+
+###
+DELETE http://localhost:3000/users/7
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Inl1c3VmbWhtZCIsImlzQWRtaW4iOjEsImlhdCI6MTcxNDQ4OTYyNX0.mw7lOaRFbJYGpwaKvUfwFx6eRHmdAimmtptjngUyugk
+
+
+###
+POST http://localhost:3000/tasks
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Inl1c3VmbWhtZCIsImlzQWRtaW4iOjEsImlhdCI6MTcxNDQ4OTYyNX0.mw7lOaRFbJYGpwaKvUfwFx6eRHmdAimmtptjngUyugk
+
+{
+    "title":"My name is Mohammad Yusuf Baba",
+    "description":"Detailed about yusuf baba",
+    "status":"pending",
+    "assinedId":4
+}
+
+###
+
+
+
+GET http://localhost:3000/tasks
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Inl1c3VmbWhtZCIsImlzQWRtaW4iOjEsImlhdCI6MTcxNDQ4OTYyNX0.mw7lOaRFbJYGpwaKvUfwFx6eRHmdAimmtptjngUyugk
+###
+
+
+
+GET http://localhost:3000/users/tasks/
+Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Inl1c3VmbWhtZCIsImlzQWRtaW4iOjEsImlhdCI6MTcxNDQ4OTYyNX0.mw7lOaRFbJYGpwaKvUfwFx6eRHmdAimmtptjngUyugk
+
+###
+DELETE http://localhost:3000/tasks/16
+Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Inl1c3VmbWhtZCIsImlzQWRtaW4iOjEsImlhdCI6MTcxNDQ4OTYyNX0.mw7lOaRFbJYGpwaKvUfwFx6eRHmdAimmtptjngUyugk
+###
+GET http://localhost:3000/tasks/23
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Inl1c3VmbWhtZCIsImlzQWRtaW4iOjEsImlhdCI6MTcxNDQ4OTYyNX0.mw7lOaRFbJYGpwaKvUfwFx6eRHmdAimmtptjngUyugk
+
+###
+PUT http://localhost:3000/tasks/23
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Inl1c3VmbWhtZCIsImlzQWRtaW4iOjEsImlhdCI6MTcxNDQ4OTYyNX0.mw7lOaRFbJYGpwaKvUfwFx6eRHmdAimmtptjngUyugk
+Content-Type: application/json
+
+{
+    "title":"updated4",
+    "description":"updated now",
+    "status":"completed"
+}
+
+
