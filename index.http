@@ -2,9 +2,10 @@ POST http://localhost:3000/register
 Content-Type: application/json
 
 {
-    "name":"Mohammad Yusuf Baba",
-    "username":"yusufmhmd",
-    "password":"yusufmhmd",
+
+    "name":"Ramana",
+    "username":"Ramana",
+    "password":"Ramana",
     "isAdmin":true
 }
 
@@ -36,8 +37,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Inl1c
 {
     "title":"My name is Mohammad Yusuf Baba",
     "description":"Detailed about yusuf baba",
-    "status":"pending",
-    "assinedId":4
+    "status":"pending"
 }
 
 ###

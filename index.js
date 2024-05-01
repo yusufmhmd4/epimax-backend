@@ -108,11 +108,11 @@ app.post("/login", async (request, response) => {
 
 // Getting all tasks 
 app.post("/tasks", authenticateToken, async (request, response) => {
-  const { title, description, status, assinedId } = request.body;
+  const dbUser = await db.get(`SELECT * FROM users WHERE username = ?`, [
+    request.user.username,
+  ]);
+  const { title, description, status, assinedId=dbUser.id } = request.body;
   try {
-    const dbUser = await db.get(`SELECT * FROM users WHERE username = ?`, [
-      request.user.username,
-    ]);
     const createNewTaskQuery = `
             INSERT INTO tasks(title, description, status, assignee_id, created_at, updated_at)
             VALUES (?, ?, ?, ?, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
@@ -162,7 +162,7 @@ app.get("/tasks", authenticateToken, async (request, response) => {
   try {
     const getAllTasksQuery = `SELECT * FROM tasks;`;
     const taskList = await db.all(getAllTasksQuery);
-    response.send(taskList);
+    response.json(taskList);
   } catch (error) {
     console.log("Error retrieving tasks:", error.message);
     response.status(500).send("Internal Server Error");
