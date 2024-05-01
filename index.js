@@ -232,3 +232,8 @@ app.delete("/tasks/:taskId", authenticateToken, async (request, response) => {
     response.status(500).send("Internal Server Error");
   }
 });
+
+
+app.get("/",(request,response)=>{
+  response.send("Welcome")
+})
